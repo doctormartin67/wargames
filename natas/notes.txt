@@ -1,4 +1,4 @@
-https://overthewire.org/wargames/bandit/
+https://overthewire.org/wargames
 
 location
 ---------
@@ -33,6 +33,7 @@ passwords
 23:qjA8cOoKFTzJhtV0Fzvt92fgvxVnVRBj
 24:0xzF30T9Av8lgXhW7slhFCIsVKAPyl2r
 25:O9QD9DZBDq1YpswiTM5oqMDaOtuZtAcx
+26:8A506rfIAXbKKk68yJeuTuRq4UfcK70k
 
 useful
 ---------
@@ -44,7 +45,7 @@ natas3:G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q
 eve:zo4mJWyNj2
 mallory:9urtcpzBmH
 
-robots.txt is a file like .gitignore but the for sites
+robots.txt is a file like .gitignore but then for sites
 
 // printing binary data in python3
 import sys
