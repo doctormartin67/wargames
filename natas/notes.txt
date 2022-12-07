@@ -1,7 +1,7 @@
 https://overthewire.org/wargames
 
 location
----------
+change browser in python---------
 http://natas[0-9]+.natas.labs.overthewire.org
 /etc/natas_webpass/natas[0-9]+
 
@@ -35,6 +35,7 @@ passwords
 25:O9QD9DZBDq1YpswiTM5oqMDaOtuZtAcx
 26:8A506rfIAXbKKk68yJeuTuRq4UfcK70k
 27:PSO8xysPi00WKIiZZ6s6PtRmFy9cbxj3
+28:skrwxciAe6Dnb0VfFDzDEHcCzQmv3Gd4
 
 useful
 ---------
