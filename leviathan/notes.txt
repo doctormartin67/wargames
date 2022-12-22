@@ -10,6 +10,12 @@ passwords
 ---------
 0: leviathan0
 1: PPIfmI1qsA
+2: mEh5PNl10e
+3: Q0G8j4sakn
+4: AgvropI4OA
+5: EKKlTF1Xqs
+6: YZ55XPVk2l
+7: 8GpZ5f8Hze
 
 robots.txt is a file like .gitignore but then for sites
 

