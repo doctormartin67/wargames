@@ -11,6 +11,7 @@ passwords
 1: ROTTEN
 2: CAESARISEASY
 3: BRUTE
+4: CLEARTEXT
 
 level2
 ---------
