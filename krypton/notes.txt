@@ -12,6 +12,7 @@ passwords
 2: CAESARISEASY
 3: BRUTE
 4: CLEARTEXT
+5: RANDOM
 
 level2
 ---------
