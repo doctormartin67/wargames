@@ -6,6 +6,7 @@ passwd narnia3: 8SyQ2wyEDU
 passwd narnia4: aKNxxrpDc1
 passwd narnia5: 1oCoEkRJSB
 passwd narnia6: BAV0SUV0iM
+passwd narnia7: YY4F9UaB60
 #########################
 
 // printing binary data in python3
