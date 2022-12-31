@@ -9,6 +9,7 @@ passwords
 0: behemoth0
 1: 8JHFW9vGru
 2: udgJeGECEW
+3: sc5GZjEMld
 
 ###################################
 level1
