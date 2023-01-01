@@ -11,6 +11,8 @@ passwords
 2: udgJeGECEW
 3: sc5GZjEMld
 4: kCr7E3fqaP
+5: g4jEuK9BTU
+6: cBucvF0OhB
 
 ###################################
 level1
